@@ -1,5 +1,5 @@
-import Popup from './Popup.js';
-//import * as index from '../index.js' 
+import {Popup} from './Popup.js';
+import * as index from './Validation.js'
 
 export class Form extends Popup {
     constructor() {
@@ -8,12 +8,12 @@ export class Form extends Popup {
         this._add = this.add.bind(this);
         this._valid = this.valid.bind(this);
     }
-    formData(validation, classContent) {
+    formData(argument, validation, classContent) {
    
-        this.form = document.querySelector(".popup__form");
-        this.name = document.querySelector(".popup__input_type_name");
-        this.info = document.querySelector(".popup__input_type_info");
-        this.submit = document.querySelector(".popup__button");
+        this.form = document.forms[argument.form];
+        this.name = this.form.elements.name;
+        this.info = this.form.elements.info;
+        this.submit = this.form.elements.submit;
       
         this.addContent = classContent;
       
@@ -28,7 +28,7 @@ export class Form extends Popup {
 
     // Удаляем слушатели
     removeAddEventListener() {
-        this.form.removeEventListener('input', validation.check);
+        this.form.removeEventListener('input', index.check);
         this.form.removeEventListener('submit',this._add);
     }
 
@@ -40,7 +40,7 @@ export class Form extends Popup {
         
         event.preventDefault();
         this.addContent.get(this.name.value, this.info.value);
-        //this.reset(); //эта строчка была за слешами
+        //this.reset();
     }
     addCards() {
         

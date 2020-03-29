@@ -1,10 +1,9 @@
-
-export default class PopupBigImg {
+import {Popup} from './Popup.js';
+export default class PopupBigImg extends Popup {
     constructor(argument) {
-        this.argument = argument;
-        this.img = document.querySelector(`.${argument.img}`);
-        // this.popUp = root.querySelector(`.${argument.popUp}`);
-        // this.img = this.popUp.querySelector(`.${argument.img}`);
+        super();
+        this.popUp = document.querySelector(`.${argument.popUp}`);
+        this.img = this.popUp.querySelector(`.${argument.img}`);
         
     }
 
@@ -15,7 +14,8 @@ export default class PopupBigImg {
     close() {
         this.img.src = '';
     }
-}
+    }
+
 
 
 

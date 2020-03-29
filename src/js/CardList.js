@@ -1,5 +1,4 @@
-//import Card from './Card.js';
-//  import * as api from './api.js'; 
+
 
 export default class CardList {
 	constructor(container, card, api, popup) {
@@ -14,9 +13,7 @@ export default class CardList {
 	addList (name,link) {
 		const card = this.card.create(name, link);
 		const container = document.querySelector(".places-list");
-		console.log(this.container);
-		console.log(card);
-		container.insertAdjacentHTML('beforeend', card);
+		container.insertAdjacentHTML('afterbegin', card);
 
 	}
 	render() {
@@ -26,10 +23,7 @@ export default class CardList {
 			const { name, link } = item;
 		 	this.addList(name, link);
 			
-		// cards.forEach(item => {
-		// 	const { name, link } = item;
-		// 	this.addList(name, link);
-		// });
+
 	}
 		)})};
   

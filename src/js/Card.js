@@ -1,23 +1,23 @@
 export default class Card {
-	constructor (argument) { //argument
-		this.$like = argument.isLiked; //argument.isLiked;
-		this.$container = argument.container; // argument.container;
+	constructor (argument) {
+		this.$like = argument.isLiked;
+		this.$container = argument.container;
 	}
 
 
-	create(name,link) {
-		return `
-			<div class="place-card">
-			<div class="place-card__image" style="background-image: url(${link});">                           
-				<button class="place-card__delete-icon"></button>
-			</div>
-			<div class="place-card__description">
-				<h3 class="place-card__name">${name}</h3>
-				<button class="place-card__like-icon"></button>
-			</div>
+create(name,link) {
+	return `
+		<div class="place-card">
+		<div class="place-card__image" style="background-image: url(${link});">                           
+			<button class="place-card__delete-icon"></button>
 		</div>
-			  `;
-	} 
+		<div class="place-card__description">
+			<h3 class="place-card__name">${name}</h3>
+			<button class="place-card__like-icon"></button>
+		</div>
+	</div>
+          `;
+} 
 
 
 	//Лайк 
@@ -27,7 +27,8 @@ export default class Card {
 
 	//Удаление карточки
 	remove() {
-		cardList.container.removeChild(event.target.closest('.place-card')); 
+		const container = document.querySelector(".places-list");
+		container.removeChild(event.target.closest('.place-card')); 
 	}
 
 	

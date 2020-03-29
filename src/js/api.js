@@ -10,7 +10,6 @@ export default class Api {
         method:'GET',
         headers: this.headers
       })
-    
         .then(res => {
           if (res.ok) {
             return res.json()
@@ -68,7 +67,6 @@ postCards(user) {
         return Promise.reject(`Что-то пошло не так ${res.status}`);
     });
 }
-
 }
 
 //Токен: 45008fcf-a69b-43aa-afc0-7b18cdd7b79f
