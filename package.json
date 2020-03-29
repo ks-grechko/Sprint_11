@@ -3,11 +3,11 @@
   "homepage": "https://github.com/ks-grechko/Sprint_11#readme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
-    "deploy": "cross-env NODE_ENV=production gh-pages -d dist"
+    "build": "NODE_ENV=production rimraf dist && webpack --mode production",
+    "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
+    "deploy": "NODE_ENV=production gh-pages -d dist"
   },
   "repository": {
     "type": "git",
