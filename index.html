@@ -5,30 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link href="style.0369b53ef542e4bc7193.css" rel="stylesheet">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 <body>
   <div class="root">
     <header class="header root__section">
-          <img src="./images/logo.svg" alt="mesto logo" class="logo" />
-    </header>
-<div class="profile root__section">
-  <div class="user-info">
-    <div class="container_user-info__photo">
-      <img src="#" alt="Avatar" class="user-info__photo" hidden>
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="container_user-info__photo">
+          <img src="#" alt="Avatar" class="user-info__photo" hidden>
+        </div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="button edit__button">Edit</button>
+        </div>
+        <button class="button user-info__button">+</button>
+      </div>
     </div>
-    <div class="user-info__data">
-      <h1 class="user-info__name"></h1>
-      <p class="user-info__job"></p>
-      <button class="button edit__button">Edit</button>
-    </div>
-    <button class="button user-info__button">+</button>
-  </div>
-</div>
-<div class="popup popup_autor">
-    <div class="popup__content">
-            <img src="./images/close.svg" alt="" class="popup__close">
-            <h3 class="popup__title">Редактировать профиль</h3>
+   <div class="popup popup_autor">
+        <div class="popup__content">
+            <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+            <h3 class="popup__title">Редактировать профиль</h3>
             <form class="popup__form" name="formProfile">
                 <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя"
                     autocomplete="off" minlength="2" maxlength="30" required>
@@ -45,15 +45,15 @@
     </div>
       <div class="popup popup-img">
         <div class="popup-img__content">
-            <img src="./images/close.svg" alt="" class="popup__close">
-            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="" class="popup-img__cart">
+            <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="" class="popup-img__cart">
         </div>
       </div>
    
     <div class="popup popup_add-plase">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close">
-        <h3 class="popup__title">Новое место</h3>
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="formCards">
             <input type="text" name="name" class="popup__input popup__input_type_name"
                 placeholder="Название" autocomplete="off" minlength="2" maxlength="30" required>
@@ -67,6 +67,6 @@
       </div>
     </div>
   </div> 
-  <script type="module" src="main.ea64160bd80450443e2f.js"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>" type="module"></script>
 </body>
 </html>
